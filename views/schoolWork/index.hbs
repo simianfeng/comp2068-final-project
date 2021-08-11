@@ -1,0 +1,33 @@
+<div style="text-align: center; background-color: lightgrey; margin-left: 150px; margin-right: 150px; margin-top: 50px">
+<h1>
+  {{title}}
+</h1>
+{{#if user}}
+  <button class="offset-1 btn btn-primary"><a href="/schoolWork/add" style="color: black; text-align:center">Add a new Task</a></button>
+{{/if}}
+<table class="table">
+  <thead>
+    <th>Name</th>
+    <th>Due Date</th>
+    <th>Course</th>
+    <th>Status</th>
+    <th>Weight</th>
+    <th>Priority</th>
+  </thead>
+  {{#each dataset}}
+  <tr>
+    <td>{{this.name}}</td>
+    <td>{{toShortDate this.dueDate}}</td>
+    <td>{{this.course}}</td>
+    <td>{{this.status}}</td>
+    <td>{{this.weight}}</td>
+    <td>{{this.priority}}</td>
+    <td></td>
+    {{#if ../user}}
+    <td><a href="/schoolWork/edit/{{this._id}}" class="btn" style="background-color: grey;">Edit</a>
+        <a href="/schoolWork/delete/{{this._id}}" class="btn" style="background-color: grey;">Delete</a></td>
+    {{/if}}
+  </tr>
+  {{/each}}
+</table>
+</div>

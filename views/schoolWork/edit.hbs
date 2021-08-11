@@ -1,0 +1,42 @@
+<div style="text-align: center;background-color:lightgrey; margin-left: 150px; margin-right: 150px; margin-top: 50px">
+<h1>
+  {{title}}
+</h1>
+<form method="POST">
+  <fieldset>
+    <label for="name" class="col-1" >Task:</label>
+    <input name="name" id="name" required value="{{schoolWork.name}}"/>
+  </fieldset>
+  <fieldset>
+    <label for="dueDate" class="col-1">Due:</label>
+    <input name="dueDate" id="dueDate" type="date", required value="{{toShortDate schoolWork.dueDate}}" />
+  </fieldset>
+  <fieldset>
+    <label for="course" class="col-1">Course:</label>
+    <input name="course" id="course" required value="{{schoolWork.course}}"/>
+  </fieldset>
+  <fieldset>
+    <label for="status" class="col-1">Status:</label>
+    <select name="status" id="status">
+      {{createOption "haven't started yet" ../schoolWork.status}}
+      {{createOption 'in progress' ../schoolWork.status}}
+      {{createOption 'finished' ../schoolWork.status}}
+    </select>
+  </fieldset>
+    <fieldset>
+    <label for="weight" class="col-1">Weight:</label>
+     <input name="weight" id="weight" required value="{{schoolWork.weight}}"/>
+  </fieldset>
+  <fieldset>
+    <label for="priority" class="col-1">Priority:</label>
+      <select name="priority" id="priority">
+      {{createOption "Very important" ../schoolWork.priority}}
+      {{createOption 'Get prepared' ../schoolWork.priority}}
+      {{createOption 'Work on it later' ../schoolWork.priority}}
+    </select>
+  </fieldset>
+  <button class="offset-1 btn btn-primary" style="background-color: grey; border:white; margin-bottom: 50px">
+    Save
+  </button>
+</form>
+</div>

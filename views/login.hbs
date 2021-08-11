@@ -1,0 +1,21 @@
+<div style="background-color:lightgrey; margin-left: 150px; margin-right: 150px;">
+<h1 style="margin-top: 50px; text-align:center;">{{title}}</h1>
+{{#if messages}}
+    <div class="alert alert-danger"> Wrong password/username</div>
+{{/if}}
+<form method="post" style="text-align:center;">
+<fieldset class="form-group">
+<label for="username" class="col-1 control-label">Username: </label>
+<input name="username" id="username" required placeholder="username"/>
+</fieldset>
+<fieldset class="form-group">
+<label for="password" class="col-1 control-label">Password: </label>
+<input style="color:white" name="password" id="password" type="password" required placeholder="******" />
+</fieldset>
+<fieldset class="form-group">
+<a class="btn btn-info offset-1" href="/register" style="color: white; background-color:grey; border:white; margin-bottom: 50px" >Register</a>
+<button class="btn btn-info" href="/login" style="color: white; background-color:grey; border:white; margin-bottom: 50px">Login</button>
+<a href="/github" class="btn btn-info" style="color: white; background-color:grey; border:white;  margin-bottom: 50px">Login with Github</a>
+</fieldset>
+</form>
+</div>
